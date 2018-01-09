@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <style>
+    .table-fixed thead {
+        width: 97%;
+}
+.table-fixed tbody {
+  height: 190px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+    </style>
+    <div class="container">
+  <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>
+            POSB-SAVINGS (039-1046-399)
+          </h4>
+        </div>
+        <table class="table table-fixed">
+          <thead>
+            <tr>
+              <th class="col-xs-3">Date</th><th class="col-xs-6">Description</th><th class="col-xs-3"> &nbsp; &nbsp; Amount ($)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-xs-3">1 Jan 2015</td><td class="col-xs-6">Deposit</td><td class="col-xs-3">1200</td>
+            </tr>
+            {% for transactions in zz %}
+            <tr>
+              <td class="col-xs-3">{{ transactions.get_date() }}</td><td class="col-xs-6"></td>{{ transactions.get_type() }}<td class="col-xs-3">{{ transactions.get_amount() }}</td>
+            </tr>
+            {% endfor %}
+            <td class="col-xs-3"></td><td class="col-xs-6"></td><td class="col-xs-3"> Total Amount: <br> <b><u>$ 2541</u></b></td>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+{% endblock %}

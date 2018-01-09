@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+p{
+    font-size: 30px;
+    text-align: center;
+}
+body{
+    background-color: whitesmoke;
+    background-size: cover;
+}
+
+input[type="text"]:disabled {
+    background-color:transparent;
+    text-align:center;
+    font-weight:bold;
+
+}
+#first {
+    border: 0.5em outset #52BE80;
+}
+#second {
+    border: 0.5em outset #CB4335;
+}
+form {
+    text-align:center;
+    font-size: 200%;
+}
+.box {
+    border: 0.5em solid grey;
+    height: 25em;
+    width: 80em;
+    margin-left: 8em;
+}
+</style>
+    <br><br><br>
+    <div class="box">
+    <br><br>
+<form action="/action_page.php">
+ Jenny has deposited <input type="text" name="money" value="$1.00" disabled id="first"> to <a href="posb">POSB SAVINGS</a>.
+<br>
+    Tom <a href="TomTH">did not deposit</a> for <input type="text" name="money2" value="3 months" disabled id="second">.
+</form>
+    </div>
+{% endblock %}
